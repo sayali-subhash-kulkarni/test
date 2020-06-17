@@ -1,0 +1,30 @@
+<!-- <p>
+  {{renderedText}}
+</p>
+<p style="color:red">
+  {{errorText}}
+</p> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Statement</th>
+      <th>Tags</th>
+      <th>Enable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let statement of statements">
+      <td>{{statement?.statement}}</td>
+      <td>
+        <span *ngFor = "let tag of statement?.tags">
+          {{tag}}
+        </span>
+      </td>
+      <td>
+        <input type="checkbox" [checked] = "hasJsTag(statement.tags)">
+      </td>
+
+    </tr>
+  </tbody>
+</table>
